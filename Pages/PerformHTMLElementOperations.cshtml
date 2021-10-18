@@ -1,0 +1,63 @@
+﻿@page "/"
+@model Nelson.Cal.Chapter4.Pages.PerformHTMLElementOperationsModel
+@{
+}
+
+<table>
+
+    <tr>
+        <img src="~/images/thumbnail-2.jpeg" alt="picture of Cal playing guitar" style="height: 100px; width: auto" />
+        <br />
+    </tr>
+
+    <tr>
+        <label>@Model.MessageStr </label>
+        <br />
+    </tr>
+
+</table>
+
+<form method="post" enctype="multipart/form-data">
+
+
+    <input type="checkbox" asp-for="RedChk" /><label style="color: @Model.RedStyle">Red</label>
+    <input type="checkbox" asp-for="WhiteChk" /><label style="color: @Model.WhiteStyle">White</label>
+    <input type="checkbox" asp-for="BlueChk" /><label style="color: @Model.BlueStyle">Blue</label><br />
+    <input type="submit" value="Display Colors" asp-page-handler="Color" /><br /><br />
+
+    <input type="date" asp-for="DateSlctd" /><br />
+    <input type="submit" value="Display Date" asp-page-handler="Date" /> <br /><br />
+
+    <input type="file" asp-for="UploadFile" />
+    <input type="submit" value="Upload File" asp-page-handler="File" /><br /><br />
+
+    <input type="hidden" asp-for="Hidden" />
+    <input type="submit" value="Set Hidden Field" asp-page-handler="SetHidden" /><br /><br />
+
+    <input type="month" asp-for="Month" />
+    <input type="submit" value="Display Month" asp-page-handler="MonthHndl" value="Select" /><br /><br />
+
+
+    <input type="radio" asp-for="UsState" value="Indiana" /> Indiana <br />
+    <input type="radio" asp-for="UsState" value="Illinois" /> Illinois <br />
+    <input type="radio" asp-for="UsState" value="Florida" /> Florida <br />
+    <input type="submit" value="Display State" asp-page-handler="DispState" /> <br /><br />
+
+    <input type="time" asp-for="SlctdTime" />
+    <input type="submit" value="Display Time" asp-page-handler="DisplayTime" /><br /><br />
+
+    <select asp-for="DropColor">
+        <option value="R">Red</option>
+        <option value="W">White</option>
+        <option value="B">Blue</option>
+    </select><br />
+    <input type="submit" value="Display Color Value" asp-page-handler="Dropdown" /><br /><br />
+
+    <textarea cols="40" rows="4" asp-for="Text"></textarea><br />
+        <input type="submit" asp-page-handler="FreeText" /><br /><br />
+
+
+</form>
+
+
+
